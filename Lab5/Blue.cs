@@ -28,7 +28,7 @@ namespace Lab5
         public int[,] Task2(int[,] matrix)
         {
             int[,] answer = new int[matrix.Length(0)-1, matrix.Length(1) - 1];
-            int max = -999
+            int max = -999;
             for (int i = 0; i < matrix.Length(0); i++)
             {
                 for (int j = 0; j < matrix.Length(1); j++)
