@@ -7,7 +7,7 @@ namespace Lab5
     {
         public double[] Task1(int[,] matrix)
         {
-            double[] answer = new double matrix.Length(0);
+            double[] answer = new double matrix.GetLength(0);
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 double summ = 0;
