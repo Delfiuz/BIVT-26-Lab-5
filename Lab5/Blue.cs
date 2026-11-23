@@ -8,16 +8,16 @@ namespace Lab5
         public double[] Task1(int[,] matrix)
         {
             double[] answer = new double matrix.Length(0);
-            for (int i = 0; i < matrix.Length(0); i++)
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 double summ = 0;
-                for (int j = 0; j <  matrix.Length(1); j++)
+                for (int j = 0; j <  matrix.GetLength(1); j++)
                 {
                     if (matrix[i,j] > 0)
                     {
                         summ += matrix[i,j];
                     }
-                    answer[i] = summ / matrix.Length(0);
+                    answer[i] = summ / matrix.GetLength(0);
                 }
             }
             return answer;
@@ -27,11 +27,11 @@ namespace Lab5
 
         public int[,] Task2(int[,] matrix)
         {
-            int[,] answer = new int[matrix.Length(0)-1, matrix.Length(1) - 1];
+            int[,] answer = new int[matrix.GetLength(0)-1, matrix.GetLength(1) - 1];
             int max = -999;
-            for (int i = 0; i < matrix.Length(0); i++)
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                for (int j = 0; j < matrix.Length(1); j++)
+                for (int j = 0; j < matrix.GetLength(1); j++)
                 {
                     if (matrix[i,j] > max)
                     {
@@ -41,9 +41,9 @@ namespace Lab5
             }
             int a = 0;
             int b = 0;
-            for (int i = 0; i < matrix.Length(0); i++)
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                for (int j = 0; j < matrix.Length(1); j++)
+                for (int j = 0; j < matrix.GetLength(1); j++)
                 {
                     if (matrix[i, j] == max)
                     {
@@ -56,13 +56,13 @@ namespace Lab5
             int ii = 0;
             int plusi = 0;
             int plusj = 0;
-            for (int i = 0; i < matrix.Length(0)-1; i++)
+            for (int i = 0; i < matrix.GetLength(0)-1; i++)
             {
                 if (i == a)
                 {
                     plusi = 1;
                 }
-                for (int j = 0; j < matrix.Length(1)-1; j++)
+                for (int j = 0; j < matrix.GetLength(1)-1; j++)
                 {
                     if (j == b)
                     {
@@ -78,12 +78,12 @@ namespace Lab5
 
         public void Task3(int[,] matrix)
         {
-            for (int i = 0; i < matrix.Length(1); i++)
+            for (int i = 0; i < matrix.GetLength(1); i++)
             {
                 int max = -999;
                 int a = 0;
                 int plusj = 0;
-                for (int j = 0; j < matrix.Length(0); j++)
+                for (int j = 0; j < matrix.GetLength(0); j++)
                 {
                     if (matrix[j,i] > max)
                     {
@@ -91,7 +91,7 @@ namespace Lab5
                         a = j;
                     }
                 }
-                for (int j = 0; j < matrix.Length(0)-1; j++)
+                for (int j = 0; j < matrix.GetLength(0)-1; j++)
                 {
                     if (j == a)
                     {
@@ -99,7 +99,7 @@ namespace Lab5
                     }
                     matrix[j, i] = matrix[j + plusj, i];
                 }
-                matrix[matrix.Length(0), i] = max;
+                matrix[matrix.GetLength(0), i] = max;
             }
         }
 
@@ -107,26 +107,26 @@ namespace Lab5
 
         public int[,] Task4(int[,] matrix)
         {
-            int[,] answer = new int[matrix.Length(0)+1, matrix.Length(1)];
-            for (int i = 0; i < matrix.Length(0); i++)
+            int[,] answer = new int[matrix.GetLength(0)+1, matrix.Length(1)];
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 int max = -999;
-                for (int j = 0; j < matrix.Length(1); j++)
+                for (int j = 0; j < matrix.GetLength(1); j++)
                 {
                     if (matrix[j, i] > max)
                     {
                         max = matrix[j, i];
                     }
                 }
-                answer[i, matrix.Length(1)] = max;
+                answer[i, matrix.GetLength(1)] = max;
 
             }
-            for (int i = 0; i < matrix.Length(0); i++)
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 int plusj = 0;
-                for (int j = 0; j < matrix.length(1); j++)
+                for (int j = 0; j < matrix.Getlength(1); j++)
                 {
-                    if (j = matrix.Length(1) - 1)
+                    if (j = matrix.GetLength(1) - 1)
                     {
                         plusj = 1;
                     }
@@ -140,10 +140,10 @@ namespace Lab5
 
         public int[] Task5(int[,] matrix)
         {
-            int[] answer = new int[matrix.Length(0), matrix.Length(1)];
+            int[] answer = new int[matrix.GetLength(0), matrix.GetLength(1)];
             for (int i = 0; i < matrix.Length(0); i++)
             {
-                for (int j = 0; j < matrix.Length(1); j++)
+                for (int j = 0; j < matrix.GetLength(1); j++)
                 {
                     if ((i+j)%2 == 1)
                     {
@@ -157,7 +157,7 @@ namespace Lab5
         {
             int maxx = -999;
             int b = 0;
-            for (int i = 0; i < matrix.Length(0); i++)
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 if (matrix[i,i] > maxx)
                 {
@@ -166,7 +166,7 @@ namespace Lab5
                 }
             }
             int a = -1;
-            for (int i = 0; i < matrix.Length(0); i++)
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 if (matrix[i,k < 0])
                 {
@@ -192,11 +192,11 @@ namespace Lab5
             {
                 int max = -999;
                 int a = 0;
-                for (int i = 0; i < matrix.Length(1); i++)
+                for (int i = 0; i < matrix.GetLength(1); i++)
                 {
-                    if (matrix[matrix.Length(0)-2, i] > maxx)
+                    if (matrix[matrix.GetLength(0)-2, i] > maxx)
                     {
-                        maxx = matrix[matrix.Length(0) - 2, i];
+                        maxx = matrix[matrix.GetLength(0) - 2, i];
                         a = i;
                     }
                 }
@@ -211,18 +211,18 @@ namespace Lab5
 
         public void Task8(int[,] matrix)
         {
-            for (int i = 0; i < matrix.Length(1); i++)
+            for (int i = 0; i < matrix.GetLength(1); i++)
             {
                 int maxx = -999;
                 int a = 0;
-                for (int j = 0; j < matrix.Length(0); j++)
+                for (int j = 0; j < matrix.GetLength(0); j++)
                 {
                     if (matrix[i,j] > maxx)
                     {
                         maxx = matrix[i, j];
                         a = j;
                     }
-                    if (j <= matrix.Length(0)/2)
+                    if (j <= matrix.GetLength(0)/2)
                     {
                         matrix[i, a] = 0;
                         for (int l = 0; l < a; l++)
@@ -243,13 +243,13 @@ namespace Lab5
             {
                 minus = 2;
             }
-            for (int i = 0; i < matrix.Length(0)-minus; i += 2)
+            for (int i = 0; i < matrix.GetLength(0)-minus; i += 2)
             {
                 int maxx = -999;
                 int maxx1 = -999;
                 int a = 0;
                 int b = 0;
-                for (int j = 0; j < matrix.Length(1); j++)
+                for (int j = 0; j < matrix.GetLength(1); j++)
                 {
                     if (matrix[i, j] > maxx)
                     {
@@ -257,7 +257,7 @@ namespace Lab5
                         a = j;
                     }
                 }
-                for (int j = 0; j < matrix.Length(1); j++)
+                for (int j = 0; j < matrix.GetLength(1); j++)
                 {
                     if (matrix[i+1, j] > maxx1)
                     {
@@ -276,7 +276,7 @@ namespace Lab5
         {
             int maxx = -999;
             int a = 0;
-            for (int i = 0; i < matrix.Length(0); i++)
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 if (matrix[i, i] > maxx)
                 {
@@ -299,10 +299,10 @@ namespace Lab5
         {
             int[] A = [matrix.Length(0)];
             int[] B = [matrix.Length(1)];
-            for (int i = 0; i < matrix.Length(0); i++)
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 int summ = 0;
-                for (int j = 0; j < matrix.Length(1); j++)
+                for (int j = 0; j < matrix.GetLength(1); j++)
                 {
                     if (matrix[i,j] > 0)
                     {
@@ -311,16 +311,16 @@ namespace Lab5
                 }
                 A[j] = summ;
             }
-            for (int i = 0; i < matrix.Length(0); i++)
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                for (int j = 0; j < matrix.Length(0)-1-i; j++)
+                for (int j = 0; j < matrix.GetLength(0)-1-i; j++)
                 {
                     if (A[j] < A[j + 1])
                     {
                         int temp = A[j];
                         A[j] = A[j + 1];
                         A[j + 1] = temp;
-                        for (int l = 0; l < matrix.Length(0); l++)
+                        for (int l = 0; l < matrix.GetLength(0); l++)
                         {
                             B[l] = matrix[j, l];
                             matrix[j, l] = matrix[j + 1, l];
@@ -337,9 +337,9 @@ namespace Lab5
         {
             int summ = 0;
             int k = 0;
-            for (int i = 0; i < array.Length(); i++)
+            for (int i = 0; i < array.GetLength(); i++)
             {
-                for (int j = 0; j < array[i].Length(); j++)
+                for (int j = 0; j < array[i].GetLength(); j++)
                 {
                     summ += matrix[i][j];
                     k++;
@@ -347,28 +347,28 @@ namespace Lab5
             }
             int kk = 0;
             double sred = summ / k;
-            for (int i = 0; i < array.Length(); i++)
+            for (int i = 0; i < array.GetLength(); i++)
             {
                 int sum2 = 0;
-                for (int j = 0; j < array[i].Length(); j++)
+                for (int j = 0; j < array[i].GetLength(); j++)
                 {
                     sum2 += array[i][j];
                 }
-                if (sum2/ array[i].Length() >= sred)
+                if (sum2/ array[i].GetLength() >= sred)
                 {
                     kk++;
                 }
             }
             int[][] answer = new int[kk][];
             kk = 0;
-            for (int i = 0; i < array.Length(); i++)
+            for (int i = 0; i < array.GetLength(); i++)
             {
                 int sum2 = 0;
-                for (int j = 0; j < array[i].Length(); j++)
+                for (int j = 0; j < array[i].GetLength(); j++)
                 {
                     sum2 += array[i][j];
                 }
-                if (sum2 / array[i].Length() >= sred)
+                if (sum2 / array[i].GetLength() >= sred)
                 {
                     answer[kk] = array[i];
                     kk++;
