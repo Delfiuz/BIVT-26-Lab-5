@@ -297,8 +297,8 @@ namespace Lab5
 
         public void Task11(int[,] matrix)
         {
-            int[] A = [matrix.Length(0)]
-            int[] B = [matrix.Length(1)]
+            int[] A = [matrix.Length(0)];
+            int[] B = [matrix.Length(1)];
             for (int i = 0; i < matrix.Length(0); i++)
             {
                 int summ = 0;
