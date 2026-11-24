@@ -1,6 +1,3 @@
-using System.Linq;
-using System.Runtime.InteropServices;
-
 namespace Lab5
 {
     public class Blue
