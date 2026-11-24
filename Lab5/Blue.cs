@@ -68,7 +68,9 @@ namespace Lab5
                     {
                         plusj = 1;
                     }
-                    answer[i, j] == matrix[i + plusi, j + plusj];
+                    int ii = i + plusi;
+                    int jj = j + plusj;
+                    answer[i, j] == matrix[ii , jj];
                 }
             }
             return answer;
@@ -107,7 +109,7 @@ namespace Lab5
 
         public int[,] Task4(int[,] matrix)
         {
-            int[,] answer = new int[matrix.GetLength(0)+1, matrix.Length(1)];
+            int[,] answer = new int[matrix.GetLength(0)+1, matrix.GetLength(1)];
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 int max = -999;
@@ -140,8 +142,8 @@ namespace Lab5
 
         public int[] Task5(int[,] matrix)
         {
-            int[] answer = new int[matrix.GetLength(0), matrix.GetLength(1)];
-            for (int i = 0; i < matrix.Length(0); i++)
+            int[,] answer = new int[matrix.GetLength(0), matrix.GetLength(1)];
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
@@ -194,13 +196,13 @@ namespace Lab5
                 int a = 0;
                 for (int i = 0; i < matrix.GetLength(1); i++)
                 {
-                    if (matrix[matrix.GetLength(0)-2, i] > maxx)
+                    if (matrix[matrix.GetLength(0)-2, i] > max)
                     {
-                        maxx = matrix[matrix.GetLength(0) - 2, i];
+                        max = matrix[matrix.GetLength(0) - 2, i];
                         a = i;
                     }
                 }
-                for (int i = 0; i < array.Length(); i++)
+                for (int i = 0; i < array.GetLength(); i++)
                 {
                     matrix[a, i] = array[i];
                 }
@@ -239,7 +241,7 @@ namespace Lab5
         public void Task9(int[,] matrix)
         {
             int minus = 1;
-            if (matrix.Length(0) % 2 == 1)
+            if (matrix.GetLength(0) % 2 == 1)
             {
                 minus = 2;
             }
@@ -297,8 +299,8 @@ namespace Lab5
 
         public void Task11(int[,] matrix)
         {
-            int[] A = [matrix.Length(0)];
-            int[] B = [matrix.Length(1)];
+            int[] A = [matrix.GetLength(0)];
+            int[] B = [matrix.GetLength(1)];
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 int summ = 0;
@@ -309,7 +311,7 @@ namespace Lab5
                         summ++;
                     }
                 }
-                A[j] = summ;
+                A[i] = summ;
             }
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
@@ -337,9 +339,9 @@ namespace Lab5
         {
             int summ = 0;
             int k = 0;
-            for (int i = 0; i < array.GetLength(); i++)
+            for (int i = 0; i < array.GetLength(0); i++)
             {
-                for (int j = 0; j < array[i].GetLength(); j++)
+                for (int j = 0; j < array[i].GetLength(1); j++)
                 {
                     summ += matrix[i][j];
                     k++;
@@ -347,10 +349,10 @@ namespace Lab5
             }
             int kk = 0;
             double sred = summ / k;
-            for (int i = 0; i < array.GetLength(); i++)
+            for (int i = 0; i < array.GetLength(0); i++)
             {
                 int sum2 = 0;
-                for (int j = 0; j < array[i].GetLength(); j++)
+                for (int j = 0; j < array[i].GetLength(1); j++)
                 {
                     sum2 += array[i][j];
                 }
@@ -361,14 +363,14 @@ namespace Lab5
             }
             int[][] answer = new int[kk][];
             kk = 0;
-            for (int i = 0; i < array.GetLength(); i++)
+            for (int i = 0; i < array.GetLength(0); i++)
             {
                 int sum2 = 0;
-                for (int j = 0; j < array[i].GetLength(); j++)
+                for (int j = 0; j < array[i].GetLength(1); j++)
                 {
                     sum2 += array[i][j];
                 }
-                if (sum2 / array[i].GetLength() >= sred)
+                if (sum2 / array[i].GetLength(1) >= sred)
                 {
                     answer[kk] = array[i];
                     kk++;
