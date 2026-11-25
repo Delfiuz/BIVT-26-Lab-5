@@ -70,7 +70,7 @@ namespace Lab5
                     }
                     ii = i + plusi;
                     int jj = j + plusj;
-                    answer[i, j] == matrix[ii , jj];
+                    answer[i, j] = matrix[ii , jj];
                 }
             }
             return answer;
@@ -202,7 +202,7 @@ namespace Lab5
                         a = i;
                     }
                 }
-                for (int i = 0; i < array.GetLength(); i++)
+                for (int i = 0; i < array.GetLength(0); i++)
                 {
                     matrix[a, i] = array[i];
                 }
