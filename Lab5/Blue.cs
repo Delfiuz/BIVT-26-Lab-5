@@ -342,9 +342,9 @@ namespace Lab5
         {
             int summ = 0;
             int k = 0;
-            for (int i = 0; i < array.GetLength(0); i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                for (int j = 0; j < array[i].GetLength(1); j++)
+                for (int j = 0; j < array[i].Length; j++)
                 {
                     summ += array[i][j];
                     k++;
@@ -352,28 +352,28 @@ namespace Lab5
             }
             int kk = 0;
             double sred = summ / k;
-            for (int i = 0; i < array.GetLength(0); i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 int sum2 = 0;
-                for (int j = 0; j < array[i].GetLength(1); j++)
+                for (int j = 0; j < array[i].Length; j++)
                 {
                     sum2 += array[i][j];
                 }
-                if (sum2/ array[i].GetLength(1) >= sred)
+                if (sum2/ array[i].Length >= sred)
                 {
                     kk++;
                 }
             }
             int[][] answer = new int[kk][];
             kk = 0;
-            for (int i = 0; i < array.GetLength(0); i++)
+            for (int i = 0; i < array.Length; i++)
             {
                 int sum2 = 0;
-                for (int j = 0; j < array[i].GetLength(1); j++)
+                for (int j = 0; j < array[i].Length; j++)
                 {
                     sum2 += array[i][j];
                 }
-                if (sum2 / array[i].GetLength(1) >= sred)
+                if (sum2 / array[i].Length >= sred)
                 {
                     answer[kk] = array[i];
                     kk++;
