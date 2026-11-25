@@ -228,7 +228,7 @@ namespace Lab5
                         a = j;
                     }
                 }
-                if (j <= matrix.GetLength(0)/2)
+                if (a <= matrix.GetLength(0)/2)
                 {
                     matrix[i, a] = 0;
                     for (int l = 0; l < a; l++)
