@@ -68,7 +68,7 @@ namespace Lab5
                     {
                         plusj = 1;
                     }
-                    int ii = i + plusi;
+                    ii = i + plusi;
                     int jj = j + plusj;
                     answer[i, j] == matrix[ii , jj];
                 }
@@ -126,9 +126,9 @@ namespace Lab5
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 int plusj = 0;
-                for (int j = 0; j < matrix.Getlength(1); j++)
+                for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-                    if (j = matrix.GetLength(1) - 1)
+                    if (j == matrix.GetLength(1) - 1)
                     {
                         plusj = 1;
                     }
@@ -142,14 +142,14 @@ namespace Lab5
 
         public int[] Task5(int[,] matrix)
         {
-            int[,] answer = new int[matrix.GetLength(0), matrix.GetLength(1)];
+            int[] answer = new int[matrix.GetLength(0)*matrix.GetLength(1)/2+ matrix.GetLength(0) * matrix.GetLength(1) % 2];
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
                 {
                     if ((i+j)%2 == 1)
                     {
-                        answer[i, j] = matrix[i, j];
+                        answer[i*matrix.GetLength(1)+j] = matrix[i, j];
                     }
                 }
             }
@@ -170,7 +170,7 @@ namespace Lab5
             int a = -1;
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                if (matrix[i,k < 0])
+                if (matrix[i,k] < 0)
                 {
                     a = i;
                 }
@@ -190,7 +190,7 @@ namespace Lab5
 
         public void Task7(int[,] matrix, int[] array)
         {
-            if (matrix.Length(1) > 1)
+            if (matrix.GetLength(1) > 1)
             {
                 int max = -999;
                 int a = 0;
@@ -343,7 +343,7 @@ namespace Lab5
             {
                 for (int j = 0; j < array[i].GetLength(1); j++)
                 {
-                    summ += matrix[i][j];
+                    summ += array[i][j];
                     k++;
                 }
             }
@@ -356,7 +356,7 @@ namespace Lab5
                 {
                     sum2 += array[i][j];
                 }
-                if (sum2/ array[i].GetLength() >= sred)
+                if (sum2/ array[i].GetLength(1) >= sred)
                 {
                     kk++;
                 }
