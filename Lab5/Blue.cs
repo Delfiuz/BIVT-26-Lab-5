@@ -17,8 +17,8 @@ namespace Lab5
                     {
                         summ += matrix[i,j];
                     }
-                    answer[i] = summ / matrix.GetLength(0);
                 }
+                answer[i] = summ / matrix.GetLength(0);
             }
             return answer;
         }
