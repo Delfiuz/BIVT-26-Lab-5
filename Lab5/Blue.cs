@@ -62,6 +62,7 @@ namespace Lab5
                 {
                     plusi = 1;
                 }
+                plusj = 0;
                 for (int j = 0; j < matrix.GetLength(1)-1; j++)
                 {
                     if (j == b)
@@ -126,7 +127,7 @@ namespace Lab5
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 int plusj = 0;
-                for (int j = 0; j < matrix.GetLength(1); j++)
+                for (int j = 0; j < matrix.GetLength(1)-1; j++)
                 {
                     if (j == matrix.GetLength(1) - 1)
                     {
@@ -142,7 +143,9 @@ namespace Lab5
 
         public int[] Task5(int[,] matrix)
         {
-            int[] answer = new int[matrix.GetLength(0)*matrix.GetLength(1)/2+ matrix.GetLength(0) * matrix.GetLength(1) % 2];
+            int a = matrix.GetLength(0);
+            int b = matrix.GetLength(1);
+            int[] answer = new int[(a*b+1)/2];
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
                 for (int j = 0; j < matrix.GetLength(1); j++)
@@ -196,9 +199,9 @@ namespace Lab5
                 int a = 0;
                 for (int i = 0; i < matrix.GetLength(1); i++)
                 {
-                    if (matrix[matrix.GetLength(0)-2, i] > max)
+                    if (matrix[matrix.GetLength(0)-1, i] > max)
                     {
-                        max = matrix[matrix.GetLength(0) - 2, i];
+                        max = matrix[matrix.GetLength(0) - 1, i];
                         a = i;
                     }
                 }
@@ -224,13 +227,13 @@ namespace Lab5
                         maxx = matrix[i, j];
                         a = j;
                     }
-                    if (j <= matrix.GetLength(0)/2)
+                }
+                if (j <= matrix.GetLength(0)/2)
+                {
+                    matrix[i, a] = 0;
+                    for (int l = 0; l < a; l++)
                     {
-                        matrix[i, a] = 0;
-                        for (int l = 0; l < a; l++)
-                        {
-                            matrix[i, a] += matrix[i, l];
-                        }
+                        matrix[i, a] += matrix[i, l];
                     }
                 }
             }
@@ -315,7 +318,7 @@ namespace Lab5
             }
             for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                for (int j = 0; j < matrix.GetLength(0)-1-i; j++)
+                for (int j = 0; j < matrix.GetLength(0)-2-i; j++)
                 {
                     if (A[j] < A[j + 1])
                     {
